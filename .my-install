@@ -1,2 +1,23 @@
+echo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+
+echo source "$HOME/.cargo/env"
+source "$HOME/.cargo/env"
+
+cargo install exa
+
+
+cp -r ~/.my-config/* ~/.config/
+
+
+
+mkdir ~/clones
+cd ~/clones
+git clone https://github.com/neovim/neovim
+sudo apt-get install gettext cmake unzip curl
+cd neovim && git checkout stable
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+
 
